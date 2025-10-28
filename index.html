@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoachRoutes | Luxury Coach Hire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E2A3A',
+                        secondary: '#B48A3D',
+                        accent: '#2C5282',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(30, 42, 58, 0.85), rgba(30, 42, 58, 0.9)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover;
+        }
+        .coach-card:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        .nav-scroll {
+            background-color: rgba(30, 42, 58, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="font-inter bg-white">
+    <!-- Header & Navigation -->
+    <header id="header" class="fixed w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">Coach<span class="text-secondary">Routes</span></a>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-white hover:text-secondary transition duration-300">Home</a>
+                <a href="#about" class="text-white hover:text-secondary transition duration-300">About</a>
+                <a href="#services" class="text-white hover:text-secondary transition duration-300">Services</a>
+                <a href="#fleet" class="text-white hover:text-secondary transition duration-300">Our Fleet</a>
+                <a href="#contact" class="text-white hover:text-secondary transition duration-300">Contact</a>
+            </nav>
+            
+            <button id="mobile-menu" class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-nav" class="md:hidden hidden bg-primary py-4 px-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="text-white hover:text-secondary transition duration-300">Home</a>
+                <a href="#about" class="text-white hover:text-secondary transition duration-300">About</a>
+                <a href="#services" class="text-white hover:text-secondary transition duration-300">Services</a>
+                <a href="#fleet" class="text-white hover:text-secondary transition duration-300">Our Fleet</a>
+                <a href="#contact" class="text-white hover:text-secondary transition duration-300">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white pt-32 pb-20 md:pt-40 md:pb-32">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Luxury Coach Hire <span class="text-secondary">Across The UK</span></h1>
+                <p class="text-xl mb-8 text-gray-300">Premium coach services for corporate events, weddings, airport transfers, and group travel. Experience comfort, reliability, and style.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="bg-secondary hover:bg-yellow-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 text-center">Get a Quote</a>
+                    <a href="#fleet" class="border border-white hover:bg-white hover:text-primary font-semibold py-3 px-8 rounded-lg transition duration-300 text-center">View Our Fleet</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Luxury Coach Exterior" class="rounded-lg shadow-2xl w-full max-w-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Why Choose CoachRoutes</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">With years of experience in luxury coach hire, we provide exceptional service tailored to your specific needs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Safety & Reliability</h3>
+                    <p class="text-gray-600">Our coaches are regularly maintained to the highest standards, and our drivers are fully licensed and experienced.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-concierge-bell text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Premium Comfort</h3>
+                    <p class="text-gray-600">Plush seating, climate control, onboard facilities, and entertainment systems ensure a comfortable journey.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">24/7 Support</h3>
+                    <p class="text-gray-600">Our dedicated team is available around the clock to assist with your travel needs and any emergencies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive transportation solutions for all your travel requirements.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <div class="flex items-start mb-8">
+                        <div class="bg-secondary rounded-full p-3 mr-6">
+                            <i class="fas fa-briefcase text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Corporate Events</h3>
+                            <p class="text-gray-600">Transportation for conferences, meetings, corporate days out, and team building events.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start mb-8">
+                        <div class="bg-secondary rounded-full p-3 mr-6">
+                            <i class="fas fa-glass-cheers text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Weddings</h3>
+                            <p class="text-gray-600">Luxury transportation for wedding parties, ensuring a memorable and stylish arrival.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-secondary rounded-full p-3 mr-6">
+                            <i class="fas fa-music text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Concerts & Events</h3>
+                            <p class="text-gray-600">Stress-free travel to concerts, festivals, and major sporting events across the UK.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="flex items-start mb-8">
+                        <div class="bg-secondary rounded-full p-3 mr-6">
+                            <i class="fas fa-plane text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Airport Transfers</h3>
+                            <p class="text-gray-600">Timely and comfortable airport transportation for individuals and groups.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start mb-8">
+                        <div class="bg-secondary rounded-full p-3 mr-6">
+                            <i class="fas fa-map-marked-alt text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Sightseeing Tours</h3>
+                            <p class="text-gray-600">Comfortable and informative tours for exploring cities and attractions across the UK.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-secondary rounded-full p-3 mr-6">
+                            <i class="fas fa-graduation-cap text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">School & University</h3>
+                            <p class="text-gray-600">Safe and reliable transportation for educational trips, sports events, and field trips.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section id="fleet" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Luxury Fleet</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Choose from our selection of premium coaches, each designed to provide an exceptional travel experience.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="coach-card bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Executive Coach" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Executive Class</h3>
+                        <p class="text-gray-600 mb-4">Ideal for corporate travel and small groups with premium amenities and workspaces.</p>
+                        <ul class="text-gray-600 mb-4">
+                            <li class="flex items-center mb-1">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                24 Reclining Seats
+                            </li>
+                            <li class="flex items-center mb-1">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Onboard Wi-Fi
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Entertainment System
+                            </li>
+                        </ul>
+                        <a href="#contact" class="inline-block bg-secondary hover:bg-yellow-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300">Inquire</a>
+                    </div>
+                </div>
+                
+                <div class="coach-card bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1567608285962-6bc52d2e42c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="First Class Coach" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">First Class</h3>
+                        <p class="text-gray-600 mb-4">Luxury travel for larger groups with enhanced comfort and premium amenities.</p>
+                        <ul class="text-gray-600 mb-4">
+                            <li class="flex items-center mb-1">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                44 Reclining Seats
+                            </li>
+                            <li class="flex items-center mb-1">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Onboard Restroom
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Premium Sound System
+                            </li>
+                        </ul>
+                        <a href="#contact" class="inline-block bg-secondary hover:bg-yellow-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300">Inquire</a>
+                    </div>
+                </div>
+                
+                <div class="coach-card bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1596727147705-61e7e5e5eb1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Elite Coach" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Elite Series</h3>
+                        <p class="text-gray-600 mb-4">The ultimate in luxury with custom interiors, premium finishes, and VIP amenities.</p>
+                        <ul class="text-gray-600 mb-4">
+                            <li class="flex items-center mb-1">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Custom Interior Design
+                            </li>
+                            <li class="flex items-center mb-1">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Private Lounge Area
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-secondary mr-2"></i>
+                                Concierge Service
+                            </li>
+                        </ul>
+                        <a href="#contact" class="inline-block bg-secondary hover:bg-yellow-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300">Inquire</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interior Showcase -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Luxurious Interiors</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Step inside our custom-designed coaches featuring premium materials and thoughtful amenities.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1596727147705-61e7e5e5eb1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Luxury Coach Interior" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="flex flex-col justify-center">
+                    <h3 class="text-2xl font-semibold mb-6">Designed for Comfort & Style</h3>
+                    <p class="text-gray-300 mb-6">Our coaches feature custom-built interiors with premium leather seating, ambient lighting, and advanced climate control systems. Every detail is crafted to provide an exceptional travel experience.</p>
+                    <p class="text-gray-300 mb-6">From spacious legroom to personalized entertainment options, we've thought of everything to make your journey as comfortable as possible.</p>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            Premium leather seating with extra legroom
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            Individual climate control and USB ports
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            Onboard entertainment and high-speed Wi-Fi
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Clients & Events</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We've provided luxury transportation for prestigious events and clients across the UK.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Corporate Event" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Corporate Events</h3>
+                        <p class="text-gray-600">Transportation solutions for executive meetings, conferences, and corporate gatherings.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Wedding Transportation" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Wedding Parties</h3>
+                        <p class="text-gray-600">Luxury transportation for wedding parties, ensuring a memorable and stylish arrival.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Tour Group" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Tour Groups</h3>
+                        <p class="text-gray-600">Comfortable and reliable transportation for extended tours and sightseeing excursions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">What Our Clients Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from our satisfied clients.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-secondary text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"CoachRoutes provided exceptional service for our corporate event. The coach was luxurious, the driver was professional, and everything ran smoothly."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold mr-4">JD</div>
+                        <div>
+                            <h4 class="font-semibold">John Davies</h4>
+                            <p class="text-gray-500 text-sm">Corporate Events Manager</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-secondary text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Our wedding transportation was flawless thanks to CoachRoutes. The coach was beautiful, and our guests were impressed with the comfort and service."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold mr-4">SW</div>
+                        <div>
+                            <h4 class="font-semibold">Sarah Wilson</h4>
+                            <p class="text-gray-500 text-sm">Wedding Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-secondary text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"We've used CoachRoutes for multiple school trips, and they never disappoint. Safety, reliability, and excellent communication every time."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold mr-4">PT</div>
+                        <div>
+                            <h4 class="font-semibold">Paul Thompson</h4>
+                            <p class="text-gray-500 text-sm">School Trip Organiser</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-primary text-white p-8 md:p-12">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6">Get In Touch</h2>
+                        <p class="mb-6">Ready to book your luxury transportation? Contact us today for a personalized quote.</p>
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-2">Contact Information</h3>
+                            <p class="flex items-center mb-2">
+                                <i class="fas fa-phone-alt text-secondary mr-3"></i>
+                                +44 (0) 20 3003 5051
+                            </p>
+                            <p class="flex items-center mb-2">
+                                <i class="fas fa-envelope text-secondary mr-3"></i>
+                                info@coachroutes.com
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-secondary mr-3"></i>
+                                International House, 109-111 Fulham Palace Road,<br>London, England, W6 8JA
+                            </p>
+                        </div>
+                        <div class="mt-8">
+                            <h3 class="text-xl font-semibold mb-4">Why Choose Us</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-secondary mr-2"></i>
+                                    Fully licensed and insured
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-secondary mr-2"></i>
+                                    Professional, experienced drivers
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-secondary mr-2"></i>
+                                    Modern, luxury fleet
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-secondary mr-2"></i>
+                                    24/7 customer support
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h3 class="text-2xl font-bold text-primary mb-6">Request a Quote</h3>
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="service" class="block text-gray-700 mb-2">Service Interested In</label>
+                                <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent">
+                                    <option value="">Please select</option>
+                                    <option value="corporate">Corporate Events</option>
+                                    <option value="wedding">Wedding Transportation</option>
+                                    <option value="airport">Airport Transfers</option>
+                                    <option value="tours">Sightseeing Tours</option>
+                                    <option value="concert">Concerts & Events</option>
+                                    <option value="school">School & University</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent" placeholder="Please include details such as dates, number of passengers, and pickup/dropoff locations..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-secondary hover:bg-yellow-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Coach<span class="text-secondary">Routes</span></h3>
+                    <p class="text-gray-300">Providing luxury transportation solutions with exceptional service and premium comfort across the UK.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-300 hover:text-secondary transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-secondary transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-secondary transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-secondary transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-secondary transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-secondary transition duration-300">About Us</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-secondary transition duration-300">Services</a></li>
+                        <li><a href="#fleet" class="text-gray-300 hover:text-secondary transition duration-300">Our Fleet</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-secondary transition duration-300">Corporate Events</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-secondary transition duration-300">Wedding Transportation</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-secondary transition duration-300">Airport Transfers</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-secondary transition duration-300">Sightseeing Tours</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <address class="not-italic text-gray-300">
+                        <p class="mb-2">International House</p>
+                        <p class="mb-2">109-111 Fulham Palace Road</p>
+                        <p class="mb-2">London, England, W6 8JA</p>
+                        <p class="mb-2">+44 (0) 20 3003 5051</p>
+                        <p>info@coachroutes.co.uk</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 CoachRoutes. All rights reserved. | Luxury Coach Hire</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('nav-scroll');
+            } else {
+                header.classList.remove('nav-scroll');
+            }
+        });
+
+        // Initialize with scroll effect
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
