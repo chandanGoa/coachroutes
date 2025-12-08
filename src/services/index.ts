@@ -62,7 +62,12 @@ export class CoachService {
         function(err) {
           if (err) reject(err);
           else if (this.changes === 0) resolve(null);
-          else resolve(database.getDb().get('SELECT * FROM coaches WHERE id = ?', [id]) as any);
+          else {
+            db.get('SELECT * FROM coaches WHERE id = ?', [id], (err, row) => {
+              if (err) reject(err);
+              else resolve(row as Coach);
+            });
+          }
         }
       );
     });
