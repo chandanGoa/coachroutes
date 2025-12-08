@@ -4,7 +4,8 @@
   "description": "Full-featured coach management system with MCP server support",
   "main": "dist/index.js",
   "bin": {
-    "coachroutes-mcp": "./dist/index.js"
+    "coachroutes-mcp": "./dist/index.js",
+    "coachroutes": "./dist/cli.js"
   },
   "scripts": {
     "build": "tsc",
@@ -12,15 +13,24 @@
     "start": "node dist/server.js",
     "mcp": "tsx src/index.ts",
     "mcp:build": "npm run build && node dist/index.js",
+    "cli": "tsx src/cli.ts",
     "seed": "tsx src/utils/seed.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["coach", "management", "booking", "mcp", "multiplatform", "fleet"],
+  "keywords": [
+    "coach",
+    "management",
+    "booking",
+    "mcp",
+    "multiplatform",
+    "fleet"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.24.3",
     "body-parser": "^2.2.1",
+    "commander": "^14.0.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
