@@ -1,1 +1,10 @@
-*.json
+node_modules/
+dist/
+public/
+data/*.db
+.env
+*.log
+.DS_Store
+coverage/
+.vscode/
+.idea/

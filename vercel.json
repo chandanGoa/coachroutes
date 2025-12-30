@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "framework": null,
+  "buildCommand": "npm run build && mkdir -p public && cp index.html admin.html public/ && cp -r images public/",
+  "outputDirectory": "public",
+  "installCommand": "npm install"
+}
