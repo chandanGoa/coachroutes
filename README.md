@@ -226,6 +226,53 @@ npm run mcp
 - CORS enabled for API access
 - Environment variable configuration for sensitive data
 
+## Deployment
+
+### Vercel Deployment
+
+This application is configured for deployment on Vercel with the included `vercel.json` configuration.
+
+**Automatic Deployment:**
+1. Connect your GitHub repository to Vercel
+2. Vercel will automatically detect the configuration and deploy
+3. The build process will:
+   - Run `npm install` to install dependencies
+   - Run `npm run build` to compile TypeScript
+   - Create a `public` directory with static HTML files
+   - Deploy the static site
+
+**Manual Deployment:**
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Deploy
+vercel
+```
+
+**Environment Variables:**
+Configure these in your Vercel project settings:
+- `DATABASE_PATH` - Path to SQLite database (e.g., `/tmp/coachroutes.db`)
+- `NODE_ENV` - Set to `production`
+
+**Note on npm warnings:**
+The deployment may show warnings about deprecated packages (`rimraf`, `npmlog`, `inflight`, `glob`, `are-we-there-yet`, `@npmcli/move-file`, `gauge`). These are transitive dependencies from `sqlite3` and do not affect functionality. They are warning-only and can be safely ignored.
+
+### Other Platforms
+
+**Heroku:**
+```bash
+# Add Procfile
+echo "web: node dist/server.js" > Procfile
+
+# Deploy
+git push heroku main
+```
+
+**Railway/Render:**
+- Build Command: `npm run build`
+- Start Command: `npm start`
+
 ## Future Enhancements
 
 - [ ] Real-time GPS tracking
